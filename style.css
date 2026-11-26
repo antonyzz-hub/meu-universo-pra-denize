@@ -1,7 +1,7 @@
 /* ============ PALETA E BASE (mobile primeiro) ============ */
 :root{
   --fundo:#050204; --vinho:#3a0715; --bordo:#7a1830; --verm:#a3243f; --rosa:#e0657f;
-  --creme:#f3e3da; --ouro:#d8b48c;
+  --creme:#f3e3da; --ouro:#d8b48c; --dock:84px; /* altura reservada ao player */
   --serif:'Cormorant Garamond',Georgia,serif; --cursiva:'Pinyon Script',cursive;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -49,9 +49,12 @@ h2{font:400 clamp(2.2rem,9vw,3.4rem)/1.2 var(--cursiva);color:var(--ouro);text-a
 @media(min-width:600px){.rosa{width:170px}.r2{width:200px}.r3{width:120px}}
 
 /* ============ SEÇÕES ============ */
-#mundo{position:relative;z-index:1;animation:sobe 1.4s both}
+/* A área de conteúdo termina ACIMA do player: nada fica coberto por ele */
+#mundo{position:relative;z-index:1;animation:sobe 1.4s both;
+  height:calc(100vh - var(--dock) - env(safe-area-inset-bottom));
+  height:calc(100svh - var(--dock) - env(safe-area-inset-bottom));
+  overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
 #mundo section{position:relative;padding:4.5rem 1.4rem;max-width:640px;margin:0 auto;text-align:center}
-#secFinal{padding-bottom:9rem!important}
 
 /* ============ ENVELOPE (CSS puro) ============ */
 .envelope{position:relative;display:block;width:min(300px,78vw);height:200px;margin:2rem auto;border:0;cursor:pointer;

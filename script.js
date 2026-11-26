@@ -32,7 +32,7 @@ const CONFIG = {
   ovoSelo: 'Com calma, meu amor. É só tocar uma vez.',
 
   // 🎁 MENSAGEM CENTRAL DA SURPRESA FINAL (use \n para quebrar linha)
-  mensagemFinal: 'Escreva aqui a sua mensagem final.'
+  mensagemFinal: 'eu te amo tanto\nfeliz aniversário meu amor'
 };
 
 /* =====================================================
